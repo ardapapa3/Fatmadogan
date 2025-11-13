@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fatma İçin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+      color: white;
+    }
+
+    body {
+      background: url('background.gif') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px 50px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #accept {
+      background-color: #00ff88;
+      color: black;
+    }
+
+    #decline {
+      background-color: #ff0044;
+      color: white;
+    }
+
+    #accept:hover {
+      background-color: #00cc66;
+    }
+
+    #decline:hover {
+      background-color: #cc0033;
+    }
+
+    #content {
+      display: none;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .fatma-image {
+      border: 5px solid;
+      border-image: linear-gradient(90deg, red, green, blue) 1;
+      border-radius: 15px;
+      width: 300px;
+      height: auto;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="agreement">
+    <h1>Sevgili Fatma, bu siteye girmek istiyorsan sözleşmeyi kabul et.<br>
+    Kabul edersen beni dava edemezsin.</h1>
+    <button id="accept">Kabul Et</button>
+    <button id="decline">Reddet</button>
+  </div>
+
+  <div id="content">
+    <img src="Fatma.png" alt="Fatma" class="fatma-image">
+  </div>
+
+  <script>
+    document.getElementById("accept").addEventListener("click", function() {
+      document.getElementById("agreement").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    });
+
+    document.getElementById("decline").addEventListener("click", function() {
+      alert("Sözleşmeyi kabul etmeden siteye giremezsin 😎");
+    });
+  </script>
+</body>
+</html>
